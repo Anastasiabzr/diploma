@@ -1,0 +1,21 @@
+{% extends 'tests/home.html' %}
+
+{% block title %}
+    | {{ Test.title }}
+{% endblock %}
+
+{% block content %}
+    <div class="container question_id" id="{{ Question.id }}">
+        <h1 class="test_title" style="text-align: center" id="{{ Last }}">{{ Test.title }}</h1>
+
+        <div class="card" style="margin: 20px">
+            <div class="card-body">
+                <h5 class="card-header" id="question_title">{{ Question.text }}</h5>
+                <div class="container" style="margin: 20px">
+                    <button href="" class="btn btn-light button_question" id="yes">Да</button>
+                    <button href="" class="btn btn-dark button_question" id="no">Нет</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

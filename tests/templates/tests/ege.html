@@ -1,0 +1,46 @@
+{% extends 'tests/home.html' %}
+
+{% block title %}
+    Баллы ЕГЭ
+{% endblock %}
+
+{% block content %}
+    <div class="container balli">
+        <h2 class="pb-2 border-bottom">Результаты ЕГЭ</h2>
+        <div class="container">
+        <div class="row">
+        <div class="order-md-1">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Ваши баллы</span>
+                <span class="badge badge-secondary badge-pill">3</span>
+              </h4>
+            <div class="row" id="balli">
+
+                {% for i in Predmeti %}
+                    <div class="row bal">
+                        <div class="col-md-4 mb-3">
+                            <label for="firstName pridmet" id="{{ i.title }}">{{ i.title }}</label>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <input type="text" class="form-control predbal" id="predbal" placeholder="0" value="" required>
+                            <div class="invalid-feedback">
+                                Ниже минимального балла.
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            <hr class="mb-4">
+            <button type="button"  class="btn btn-dark" id="itog">
+                    Отправить
+            </button>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+    <div class="container result" style="display: none">
+        <h2 class="pb-2 border-bottom">Итог</h2>
+    </div>
+{% endblock %}
